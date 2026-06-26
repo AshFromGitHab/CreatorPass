@@ -1,4 +1,4 @@
-# GigLink
+# CreatorPass
 
 **Time-locked USDC subscriptions for Filipino content creators — fans pay once, creators claim at month-end with full on-chain transparency.**
 
