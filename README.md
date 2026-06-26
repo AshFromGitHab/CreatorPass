@@ -10,13 +10,13 @@ A Filipino Twitch streamer with 8,000 followers gets paid via PayPal subscriptio
 
 ## Solution
 
-Fans subscribe by locking USDC into **GigLink**, a Soroban smart contract. After 30 days, the creator calls `claim` and receives the USDC directly to their Stellar wallet. Zero middleman. Sub-cent fees. The fan can cancel within the first day if the creator goes inactive, protecting against abandoned channels.
+Fans subscribe by locking USDC into CreatorPass, a Soroban contract. After 30 days, the creator calls `claim` and receives the USDC directly to their Stellar wallet. Zero middleman. Sub-cent fees. The fan can cancel within the first day if the creator goes inactive, protecting against abandoned channels.
 
 ## Stellar Features Used
 
 - **USDC transfers** — subscription payments locked in contract escrow
 - **Soroban smart contracts** — time-lock logic, cancel/refund, access control
-- **Trustlines** — creator and fan both hold USDC trustlines
+- **Trustlines** — creator and fan both hold USDC trustline
 
 ## Target Users
 
@@ -26,7 +26,7 @@ Fans subscribe by locking USDC into **GigLink**, a Soroban smart contract. After
 
 ## Vision and Purpose
 
-GigLink is Patreon built on Stellar — but without Patreon's 8% cut, 30-day payout delays, and geographic discrimination. Every creator with a Stellar wallet can accept global fan subscriptions. The on-chain model is composable: add subscription tiers, NFT access passes, or DeFi yield on locked funds.
+CreatorPass is Patreon built on Stellar — but without Patreon's 8% cut, 30-day payout delays, and geographic discrimination. Every creator with a Stellar wallet can accept global fan subscriptions. The on-chain model is composable: add tiers, NFT access passes, or DeFi yield on locked funds.
 
 ---
 
@@ -51,7 +51,7 @@ cargo test
 
 ```bash
 soroban contract deploy \
-  --wasm target/wasm32-unknown-unknown/release/giglink.wasm \
+  --wasm target/wasm32-unknown-unknown/release/creatorpass.wasm \
   --source YOUR_SECRET_KEY \
   --network testnet
 ```
@@ -97,14 +97,3 @@ soroban contract invoke \
 ## License
 
 MIT
-
-## Deployed Contract
-
-| Field | Value |
-|-------|-------|
-| Contract ID | `CBKWA565RWKBI55KVLECNZVDQ4J4YGOAO523EXZAEQBENYURPDNHR7S4` |
-| Network | testnet |
-| Explorer | [View on stellar.expert](https://stellar.expert/explorer/testnet/contract/CBKWA565RWKBI55KVLECNZVDQ4J4YGOAO523EXZAEQBENYURPDNHR7S4) |
-| Deploy Tx | [View transaction](https://stellar.expert/explorer/testnet/tx/8619c90818130f5cf2b4d173c89bdf666618f250647e324c22545e322467b112) |
-| Deployed | 2026-06-26 06:53:50 UTC |
-| Wallet | freighter (`GCEW…IHMP`) |
